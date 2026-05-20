@@ -18,7 +18,10 @@ The notebook was created using the instance "type ml.t3.medium" (see screenshot)
 
 The notebook uses the AWS Execution Role also shown in the screenshot. Moreover, this execution role was given the S3FullAccess role to be able to communicate data to and from the S3 bucket.
 ![image](01a_Notebook-Setup.jpg)
+
 ![image](01b_Notebook-Creation.jpg)
+
+![image](01c_Permissions.jpg)
 
 ### 1.2 Creation of S3 Bucket
 To be able to save and provide data to Sagemaker, the following S3 bucket (see screenshot) was created in the AWS account.
