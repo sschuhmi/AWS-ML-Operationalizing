@@ -16,7 +16,7 @@ The following aspects of AWS machine learning operations are regarded:
 ### 1.1 Creation of Jupyter Notebook in Sagemaker Studio 
 The notebook was created using the instance "type ml.t3.medium" (see screenshot), which should be an adequate choice since it provides sufficient performance for most typical tasks, but reasonably limits costs. In case more power is needed, a change of the instance type to one with more power (e.g., "ml.m5.xlarge") could be the next step.
 
-The notebook uses the AWS Execution Role also shown in the screenshot.
+The notebook uses the AWS Execution Role also shown in the screenshot. Moreover, this execution role was given the S3FullAccess role to be able to communicate data to and from the S3 bucket.
 ![image](01a_Notebook-Setup.jpg)
 ![image](01b_Notebook-Creation.jpg)
 
@@ -24,8 +24,7 @@ The notebook uses the AWS Execution Role also shown in the screenshot.
 To be able to save and provide data to Sagemaker, the following S3 bucket (see screenshot) was created in the AWS account.
 ![image](02_S3-Bucket.jpg)
 
-- 
-- 
+### 1.3 Deployment & Training
 
 
 ## Step 2: Training on EC2
