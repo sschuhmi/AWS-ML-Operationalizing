@@ -3,6 +3,14 @@ Project "Operationalizing an AWS Machine Learning Project" (part of Udacity nd18
 
 ## Intro
 
+This project focuses on the operationalizing of a completed ML Project in AWS SageMaker.
+The project uses several important tools and features of AWS to adjust, improve, configure, and prepare the model for production-grade deployment.
+The following aspects of AWS machine learning operations are regarded:
+- How to manage computing resources efficiently
+- How to train models with large datasets using multi-instance training
+- How to set up high-throughput, low-latency pipelines
+- How to exploit AWS security
+
 ## Step 1: Training & deployment in AWS Sagemaker
 
 ### 1.1 Creation of Jupyter Notebook in Sagemaker Studio 
