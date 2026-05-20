@@ -10,6 +10,8 @@ The notebook was created using the instance "type ml.t3.medium" (see screenshot)
 ![image](Notebook-Setup.jpg)
 
 ### 1.2 Creation of S3 Bucket
+To be able to save and provide data to Sagemaker, the following S3 bucket (see screenshot) was created in the AWS account.
+![image](02_S3-Bucket.jpg)
 
 - 
 - 
