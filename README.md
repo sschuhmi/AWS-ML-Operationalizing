@@ -60,3 +60,13 @@ Multi-instance training was performed using 4 ml.m5.xlarge instances. It took ar
 ## Step 4: Lambda security setup & testing
 
 ## Step 5: Lambda Concurrency setup & Endpoint Auto-scaling
+
+The following endpoint with the best hyperparameters for inference was deployed:
+![image](xx_Endpoint.jpg)
+
+To enable Auto-Scaling for the endpoint, the following settings were taken:
+![image](xx_AutoScaling.jpg)
+
+To enbale concurrency for the Lambda function, we have set a reserved concurrency of 5 and provisioned 3 instances. 
+I.e., we can handle 3 incoming requests simultaneously, which is stable enough for an average number of invocations from users or apps.
+![image](xx_Concurrency.jpg)
