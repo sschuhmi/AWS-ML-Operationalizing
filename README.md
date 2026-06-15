@@ -75,8 +75,13 @@ unzip dogImages.zip
 mkdir -p TrainedModels
 python ec2train1.py
 ```
-
 ec2train1.py expects the extracted dataset under dogImages/ and saves the trained weights to TrainedModels/model.pth.
+
+Training on EC2 was performed successfully, as one can see in the following two screenshots.
+
+![image](06a_EC2-ModelTraining.jpg)
+
+![image](06b_EC2-ModelTraining-saved.jpg)
 
 The overall process overall is similar to training the model on SageMaker. However, it needs more manual effort in many steps:
 - The code needs to be adapted to include extra loaders and loggers in order to get intermediate logs, since the visiblity during training is not given when compared to SageMaker.
