@@ -59,6 +59,15 @@ As a result, we got class 90 which got the maximum inference value of around 0.9
 
 ## Step 2: Training on EC2
 
+To run the EC2 variant, use the standalone EC2 path when you want to train outside SageMaker-managed jobs.
+
+wget https://s3-us-west-1.amazonaws.com/uda-mleng-project4/dog-project/dogImages.zip
+unzip dogImages.zip
+mkdir -p TrainedModels
+python ec2train1.py
+
+ec2train1.py expects the extracted dataset under dogImages/ in the S3 Bucket (here: uda-mleng-project4) and saves the trained weights to TrainedModels/model.pth.
+
 ## Step 3: Setup of Lambda Function
 
 ## Step 4: Lambda security setup & testing
@@ -73,7 +82,7 @@ Then, Auto-Scaling for the endpoint was enabled:
 
 In detail, the following settings were taken:
 - Number of instances was defined to be between 1 and 3, i.e. the maximum of 3 instances will be simultaneously available if needed
-- A target value of 10 simultaneous invocations was selected, with scale in/out cool down times of 30, respectively. This allows an acceptably quick response on changing traffic demands with temporarily high throughputs.
+- A target value of 10 simultaneous invocations as trigger for Auto-Scaling enablement was selected, with scale in/out cool down times of 30, respectively. This allows an acceptably quick response on changing traffic demands with temporarily high throughputs.
 ![image](05b_AutoScaling-Parameters.jpg)
 
 To enbale concurrency for the Lambda function, we have set a reserved concurrency of 5 and provisioned 3 instances. 
