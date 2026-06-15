@@ -68,12 +68,12 @@ An instance type of t3.micro was used to minimize the costs.
 
 To run the EC2 variant e.g. via Terminal, use the standalone EC2 path when you want to train outside SageMaker-managed jobs.
 
-'''
+```bash
 wget https://s3-us-west-1.amazonaws.com/uda-mleng-project4/dog-project/dogImages.zip
 unzip dogImages.zip
 mkdir -p TrainedModels
 python ec2train1.py
-'''
+```
 
 ec2train1.py expects the extracted dataset under dogImages/ in the S3 Bucket (here: uda-mleng-project4) and saves the trained weights to TrainedModels/model.pth.
 
