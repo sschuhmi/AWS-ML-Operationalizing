@@ -59,6 +59,14 @@ As a result, we got class 90 which got the maximum inference value of around 0.9
 
 ## Step 2: Training on EC2
 
+For training on EC2, an EC2 instance was launched with the following parameters:
+![image](06_EC2-instance.jpg)
+
+![image](06_EC2-instance-Details.jpg)
+
+An instance type of t3.micro was used to minimize the costs.
+The instance had the Deep Learning AMI GPU PyTorch 2.0.0 which comes with the latest version of PyTorch.
+
 To run the EC2 variant, use the standalone EC2 path when you want to train outside SageMaker-managed jobs.
 
 wget https://s3-us-west-1.amazonaws.com/uda-mleng-project4/dog-project/dogImages.zip
