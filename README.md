@@ -64,7 +64,7 @@ For training on EC2, an EC2 instance was launched with the following parameters:
 
 ![image](06_EC2-instance-Details.jpg)
 
-An instance type of t3.micro was used to minimize the costs. 
+An instance type of t3.micro was used to minimize the costs. Moreover, there is a free-tier option for this instance type available, reducing EC2 costs actually down to zero within this project.
 The following Amazon Machine Image (AMI) was used: Deep Learning OSS Nvidia Driver AMI GPU PyTorch 2.11 (Amazon Linux 2023)
 
 To run the EC2 variant e.g. via Terminal, use the standalone EC2 path when you want to train outside SageMaker-managed jobs.
