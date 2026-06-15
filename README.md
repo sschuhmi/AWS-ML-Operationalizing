@@ -64,18 +64,19 @@ For training on EC2, an EC2 instance was launched with the following parameters:
 
 ![image](06_EC2-instance-Details.jpg)
 
-An instance type of t3.micro was used to minimize the costs.
+An instance type of t3.micro was used to minimize the costs. 
+The following Amazon Machine Image (AMI) was used: Deep Learning OSS Nvidia Driver AMI GPU PyTorch 2.11 (Amazon Linux 2023)
 
 To run the EC2 variant e.g. via Terminal, use the standalone EC2 path when you want to train outside SageMaker-managed jobs.
 
 ```bash
-wget https://s3-us-west-1.amazonaws.com/uda-mleng-project4/dog-project/dogImages.zip
+wget https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip
 unzip dogImages.zip
 mkdir -p TrainedModels
 python ec2train1.py
 ```
 
-ec2train1.py expects the extracted dataset under dogImages/ in the S3 Bucket (here: uda-mleng-project4) and saves the trained weights to TrainedModels/model.pth.
+ec2train1.py expects the extracted dataset under dogImages/ and saves the trained weights to TrainedModels/model.pth.
 
 ## Step 3: Setup of Lambda Function
 
