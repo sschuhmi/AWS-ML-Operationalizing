@@ -32,26 +32,30 @@ Training on Sagemaker was performed in two different ways:
 - Using single-instance training with 1 ml.m5.xlarge instance
 - Using multi-instance training with 4 ml.m5.xlarge instances
 
-You can see the training jobs that have been used for Sagemaker training at May 28, 2026, in the following screenshot. The screenshot shows the one job of the single-instance training (last event time at 09:37:14) as well as the 4 jobs of the multi-instance training (last event times between 09:38:18 and 09:38:20)
+You can see the log steams of the training jobs that have been used for Sagemaker training at June 16, 2026, in the following screenshot. The screenshot shows the one job of the single-instance training (last event time at 07:09:25) as well as the 4 jobs of the multi-instance training (last event times between 07:09:27 and 07:09:28)
 ![image](03_PyTorch-AllJobs.jpg)
 
-Every PyTorch training job uses the SageMaker execution role with S3FullAccess permission on the created S3 bucket which holds the test, training and validation data. The settings of an exemplary training job are shown in the following screenshot.
-![image](03_PyTorch-TrainingJob.jpg)
-
+Every PyTorch training job uses the SageMaker execution role with S3FullAccess permission on the created S3 bucket which holds the test, training and validation data.
 Both the single-instance and multi-instance jobs completed successfully. Details will be provided in the following paragraphs.
 ![image](03_PyTorch-Success.jpg)
 
 #### 1.3.1 Single-instance training
-Single-instance training was performed using 1 ml.m5.xlarge instance. It took around 21 minutes for training (1188 billable seconds).
+Single-instance training was performed using 1 ml.m5.xlarge instance. It took around 20 minutes for training (1174 training seconds) and completed successfully.
 
 ![image](04a_Single-Instance-Training.jpg)
 
 
 #### 1.3.2 Multi-instance training
-Multi-instance training was performed using 4 ml.m5.xlarge instances. It took around the same 21 minutes for training (1211 billable seconds).
+Multi-instance training was performed using 4 ml.m5.xlarge instances. It took around the same 20 minutes for training (1181 training seconds) and also completed successfully.
 
 ![image](04b_Multi-Instance-Training.jpg)
 
+After successful training, the following endpoint was deployed:
+
+We performed an inference test on the deployed endpoint using the Carolina Dog image shown in the following.
+![image](https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/20113314/Carolina-Dog-standing-outdoors.jpg)
+
+As a result, we got class 90 which got the maximum inference value of around 0.92.
 
 ## Step 2: Training on EC2
 
@@ -62,10 +66,15 @@ Multi-instance training was performed using 4 ml.m5.xlarge instances. It took ar
 ## Step 5: Lambda Concurrency setup & Endpoint Auto-scaling
 
 The following endpoint with the best hyperparameters for inference was deployed:
-![image](xx_Endpoint.jpg)
+![image](05_DeployedEndpoint.jpg)
 
-To enable Auto-Scaling for the endpoint, the following settings were taken:
-![image](xx_AutoScaling.jpg)
+Then, Auto-Scaling for the endpoint was enabled:
+![image](05a_AutoScaling.jpg)
+
+In detail, the following settings were taken:
+- Number of instances was defined to be between 1 and 3, i.e. the maximum of 3 instances will be simultaneously available if needed
+- A target value of 10 simultaneous invocations was selected, with scale in/out cool down times of 30, respectively. This allows an acceptably quick response on changing traffic demands with temporarily high throughputs.
+![image](05b_AutoScaling-Parameters.jpg)
 
 To enbale concurrency for the Lambda function, we have set a reserved concurrency of 5 and provisioned 3 instances. 
 I.e., we can handle 3 incoming requests simultaneously, which is stable enough for an average number of invocations from users or apps.
