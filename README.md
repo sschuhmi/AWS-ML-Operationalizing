@@ -77,9 +77,11 @@ python ec2train1.py
 ```
 ec2train1.py expects the extracted dataset under dogImages/ and saves the trained weights to TrainedModels/model.pth.
 
-Training on EC2 was performed successfully, as one can see in the following two screenshots.
+Training on EC2 was performed successfully, as one can see in the following screenshot.
 
 ![image](06a_EC2-ModelTraining.jpg)
+
+The trained model weights were saved under the given path.
 
 ![image](06b_EC2-ModelTraining-saved.jpg)
 
