@@ -78,6 +78,13 @@ python ec2train1.py
 
 ec2train1.py expects the extracted dataset under dogImages/ and saves the trained weights to TrainedModels/model.pth.
 
+The overall process overall is similar to training the model on SageMaker. However, it needs more manual effort in many steps:
+- The code needs to be adapted to include extra loaders and loggers in order to get intermediate logs, since the visiblity during training is not given when compared to SageMaker.
+- Setting up multi-instance training using EC2 also needs more attention than in SageMaker where a simple parameter has to be changed. In EC2, the manual setup and management of clusters would be necessary.
+- It is also not possible to directly deploy an endpoint of the trained model, which is quite simple in SageMaker.
+
+Thus, as one can see, there is a significant tradeoff between cost and ease-of-use that has to be considered when comparing these two methods.
+
 ## Step 3: Setup of Lambda Function
 
 ## Step 4: Lambda security setup & testing
