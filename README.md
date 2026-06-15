@@ -63,7 +63,7 @@ As a result, we got class 90 which got the maximum inference value of around 0.9
 
 ## Step 4: Lambda security setup & testing
 
-## Step 5: Lambda Concurrency setup & Endpoint Auto-scaling
+## Step 5: Endpoint Auto-Scaling & Lambda Concurrency setup
 
 The following endpoint with the best hyperparameters for inference was deployed:
 ![image](05_DeployedEndpoint.jpg)
