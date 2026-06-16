@@ -103,7 +103,7 @@ The only changed that has been made was to change the name of the endpoint to 'p
 In the following figure, you can see the code added to the lambda function.
 ![image](07_Lambda-Code.jpg)
 
-To be able to test invocations on the endpoint using the Lambda function, the following Test Event was created, representing the URL to a picture of a Carolina Dog (https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/20113314/Carolina-Dog-standing-outdoors.jpg).
+To be able to test invocations on the endpoint using the Lambda function, the following Test Event was created, representing the URL to a picture of a Carolina Dog (https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/20113314/Carolina-Dog-standing-outdoors.jpg) which is also depicted above.
 ![image](07_Lambda-TestEvent.jpg)
 
 ## Step 4: Lambda security setup & testing
