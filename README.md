@@ -98,7 +98,7 @@ Thus, as one can see, there is a significant tradeoff between cost and ease-of-u
 When setting up the Lambda function 'uda-p4-lambda', the starter code lambda_function.py was used.
 ![image](07_Lambda-Function.jpg)
 
-The only changed that has been made was to change the name of the endpoint to 'pytorch-inference-2026-06-15-07-29-40-902', being the endpoint which has been previously deployed (see above).
+The only change that has been made was to change the name of the endpoint to 'pytorch-inference-2026-06-15-07-29-40-902', being the endpoint which has been previously deployed (see above).
 ![image](07_Lambda-Endpoint.jpg)
 
 In the following figure, you can see the code added to the lambda function.
