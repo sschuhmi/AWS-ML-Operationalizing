@@ -32,7 +32,7 @@ Training on Sagemaker was performed in two different ways:
 - Using single-instance training with 1 ml.m5.xlarge instance
 - Using multi-instance training with 4 ml.m5.xlarge instances
 
-You can see the log steams of the training jobs that have been used for Sagemaker training at June 16, 2026, in the following screenshot. The screenshot shows the one job of the single-instance training (last event time at 07:09:25) as well as the 4 jobs of the multi-instance training (last event times between 07:09:27 and 07:09:28)
+You can see the log steams of the training jobs that have been used for Sagemaker training at June 16, 2026, in the following screenshot. The screenshot shows the one job of the single-instance training (last event time at 07:09:25) as well as the 4 jobs of the multi-instance training (last event times between 07:09:27 and 07:09:28).
 ![image](03_PyTorch-AllJobs.jpg)
 
 Every PyTorch training job uses the SageMaker execution role with S3FullAccess permission on the created S3 bucket which holds the test, training and validation data.
