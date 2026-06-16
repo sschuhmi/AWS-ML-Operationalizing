@@ -86,7 +86,7 @@ The trained model weights were saved under the given path.
 
 ![image](06b_EC2-ModelTraining-saved.jpg)
 
-The overall process overall is similar to training the model on SageMaker. However, it needs more manual effort in many steps:
+The overall process is similar to training the model on SageMaker. However, it needs more manual effort in many steps:
 - The code needs to be adapted to include extra loaders and loggers in order to get intermediate logs, since the visiblity during training is not given when compared to SageMaker.
 - Setting up multi-instance training using EC2 also needs more attention than in SageMaker where a simple parameter has to be changed. In EC2, the manual setup and management of clusters would be necessary.
 - It is also not possible to directly deploy an endpoint of the trained model, which is quite simple in SageMaker.
