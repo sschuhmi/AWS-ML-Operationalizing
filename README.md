@@ -92,20 +92,19 @@ The overall process overall is similar to training the model on SageMaker. Howev
 
 Thus, as one can see, there is a significant tradeoff between cost and ease-of-use that has to be considered when comparing these two methods.
 
-## Step 3: Setup of Lambda Function
+## Step 3: Setup of Lambda function
 
-Lambda Code:
-![image](07_Lambda-Code.jpg)
-
-Lambda Endpoint:
-![image](07_Lambda-Endpoint.jpg)
-
-Lambda Function:
+When setting up the Lambda function 'uda-p4-lambda', the starter code lambda_function.py was used.
 ![image](07_Lambda-Function.jpg)
 
-Lambda TestEvent:
-![image](07_Lambda-TestEvent.jpg)
+The only changed that has been made was to change the name of the endpoint to 'pytorch-inference-2026-06-15-07-29-40-902', being the endpoint which has been previously deployed (see above).
+![image](07_Lambda-Endpoint.jpg)
 
+In the following figure, you can see the code added to the lambda function.
+![image](07_Lambda-Code.jpg)
+
+To be able to test invocations on the endpoint using the Lambda function, the following Test Event was created, representing the URL to a picture of a Carolina Dog (https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/20113314/Carolina-Dog-standing-outdoors.jpg).
+![image](07_Lambda-TestEvent.jpg)
 
 ## Step 4: Lambda security setup & testing
 
