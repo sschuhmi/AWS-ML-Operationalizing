@@ -54,7 +54,7 @@ After successful training, the following endpoint was deployed:
 ![image](03_Endpoint.jpg)
 
 
-We performed an inference test on the deployed endpoint using image of a Carolina Dog.
+We performed an inference test on the deployed endpoint using an image of a Carolina Dog.
 As a result, we received the 91th class in the array (array[90], i.e. the 91th entry) which got the maximum inference value of around 0.92, as one can see in the screenshot from the Jupyter Notebook (train_and_deploy-solution.ipynb).
 ![image](04c_Inference.jpg)
 
@@ -66,9 +66,9 @@ For training on EC2, an EC2 instance was launched with the following parameters:
 ![image](06_EC2-instance-Details.jpg)
 
 An instance type of t3.micro was used to minimize the costs. Moreover, there is a free-tier option for this instance type available, reducing EC2 costs actually down to zero within this project.
-The following Amazon Machine Image (AMI) was used: Deep Learning OSS Nvidia Driver AMI GPU PyTorch 2.11 (Amazon Linux 2023)
+The following Amazon Machine Image (AMI) was used: Deep Learning AMI with Single CUDA (Amazon Linux 2023)
 
-To run the EC2 variant e.g. via Terminal, use the standalone EC2 path when you want to train outside SageMaker-managed jobs.
+To run the EC2 variant e.g. via Terminal, just use the standalone EC2 path when you want to train outside SageMaker-managed jobs.
 
 ```bash
 wget https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip
@@ -116,7 +116,7 @@ When trying to invoke the Lambda function using the created test event, the foll
 
 ![image](08_Lambda-Error.jpg)
 
-The reason for this error are insufficient privileges for the role of the Lambda function uda-p4-lambda to access the SageMaker inference endpoint.
+The reason for this error are insufficient privileges for the role of the Lambda function 'uda-p4-lambda' to access the SageMaker inference endpoint.
 This can be fixed by adding a policy with the respective SageMaker privileges in AWS IAM.
 
 ![image](08_Lambda-IAM.jpg)
