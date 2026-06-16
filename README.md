@@ -150,6 +150,6 @@ In detail, the following settings were taken:
 - A target value of 10 simultaneous invocations as trigger for Auto-Scaling enablement was selected, with scale in/out cool down times of 30, respectively. This allows an acceptably quick response on changing traffic demands with temporarily high throughputs.
 ![image](05b_AutoScaling-Parameters.jpg)
 
-To enbale concurrency for the Lambda function uda-p4-lambda, we have set a reserved concurrency of 5 and provisioned 3 instances. 
+To enbale concurrency for the Lambda function uda-p4-lambda without incurring too high costs, we have set a reserved concurrency of 5 and provisioned 3 instances. 
 I.e., we can handle 3 incoming requests simultaneously, which is stable enough for an average number of invocations from users or apps, while additionally reserving some extra capacity.
 ![image](05c_Lambda-Concurrency.jpg)
