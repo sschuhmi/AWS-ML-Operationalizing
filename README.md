@@ -1,4 +1,4 @@
-# AWS-ML-Operationalizing
+# AWS-ML-Operationalizing - WriteUp
 Project "Operationalizing an AWS Machine Learning Project" (part of Udacity nd189)
 
 ## Intro
