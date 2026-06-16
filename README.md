@@ -142,6 +142,8 @@ Response:
 The following endpoint with the best hyperparameters for inference was deployed:
 ![image](05_DeployedEndpoint.jpg)
 
+### 5.1 Endpoint Auto-Scaling
+
 Then, Auto-Scaling for the endpoint was enabled:
 ![image](05a_AutoScaling.jpg)
 
@@ -149,6 +151,8 @@ In detail, the following settings were taken:
 - Number of instances was defined to be between 1 and 3, i.e. the maximum of 3 instances will be simultaneously available if needed
 - A target value of 10 simultaneous invocations as trigger for Auto-Scaling enablement was selected, with scale in/out cool down times of 30, respectively. This allows an acceptably quick response on changing traffic demands with temporarily high throughputs.
 ![image](05b_AutoScaling-Parameters.jpg)
+
+### 5.2 Lambda Concurrency
 
 To enbale concurrency for the Lambda function uda-p4-lambda without incurring too high costs, we have set a reserved concurrency of 5 and provisioned 3 instances. 
 I.e., we can handle 3 incoming requests simultaneously, which is stable enough for an average number of invocations from users or apps, while additionally reserving some extra capacity.
