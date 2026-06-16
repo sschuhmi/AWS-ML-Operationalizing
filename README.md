@@ -53,7 +53,7 @@ Multi-instance training was performed using 4 ml.m5.xlarge instances. It took ar
 After successful training, the following endpoint was deployed:
 
 We performed an inference test on the deployed endpoint using image of a Carolina Dog.
-As a result, we got class 90 which got the maximum inference value of around 0.92, as one can see in the screenshot from the Jupyter Notebook (train_and_deploy-solution.ipynb).
+As a result, we received the 91th class in the array (array[90], i.e. the 91th entry) which got the maximum inference value of around 0.92, as one can see in the screenshot from the Jupyter Notebook (train_and_deploy-solution.ipynb).
 ![image](04c_Inference.jpg)
 
 ## Step 2: Training on EC2
